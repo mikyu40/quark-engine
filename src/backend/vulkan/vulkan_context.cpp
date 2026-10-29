@@ -953,8 +953,6 @@ util::Status VulkanContext::recreate_swapchain() {
   QUARK_OK();
 }
 
-#endif
-
 void VulkanContext::destroy_depth_resources() noexcept {
   if (device_.vk_device() == VK_NULL_HANDLE) {
     depth_resources_.clear();
@@ -975,6 +973,8 @@ void VulkanContext::destroy_depth_resources() noexcept {
   depth_resources_.clear();
   depth_images_initialized_.clear();
 }
+
+#endif
 
 void VulkanContext::resolve_render_path() {
   const auto caps = device_.capabilities();
